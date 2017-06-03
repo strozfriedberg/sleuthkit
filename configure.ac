@@ -152,6 +152,8 @@ AS_IF([test "x$ax_libbfio" = "xyes"],
       [ax_libvslvm=no])
 dnl Check if we should link with libqcow
 TSK_OPT_DEP_CHECK([libqcow], [QCOW], [libqcow], [libqcow.h], [qcow], [libqcow_get_version])
+dnl Check if we should link with libaff4
+TSK_OPT_DEP_CHECK([libaff4], [], [], [aff4/libaff4-c.h], [aff4], [AFF4_version])
 
 dnl check for cppunit
 AC_ARG_ENABLE([cppunit],
@@ -352,6 +354,7 @@ dnl openssl is disabled, so removed line openssl support: $ax_openssl
 AC_MSG_NOTICE([
 Building:
    afflib support:                        $ax_afflib
+   libaff4 support:                       $ax_libaff4
    libbfio support:                       $ax_libbfio
    libewf support:                        $ax_libewf
    libqcow support:                       $ax_libqcow
