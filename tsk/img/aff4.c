@@ -37,20 +37,26 @@ static char* get_messages(AFF4_Message* msg) {
       return NULL;
     }
 
-    char* ret = (char*) tsk_malloc(len);
+    // get message lengths and total length
+    const size_t maxlen = 1024;
+    size_t* lengths = tsk_malloc(count * sizeof(size_t));
+    size_t total_len = 0;
+
+    int i = 0;
+    for (const AFF4_Message* m = msg; m; m = m->next, ++i) {
+        total_len += lengths[i] = strnlen(m->message, maxlen);
+    }
 
     // copy the messages to one string
     char* ret = (char*) tsk_malloc(total_len + count);
     char* p = ret;
-    size_t mlen;
-
-    for (const AFF4_Message* m = msg; m; m = m->next) {
-        mlen = strlen(m->message);
-        strcpy(p, m->message);
-        p += mlen;
+    i = 0;
+    for (const AFF4_Message* m = msg; m; m = m->next, ++i) {
+        strncpy(p, m->message, lengths[i]);
+        p += lengths[i];
         *p++ = '\n';
     }
-    ret[len-1] = '\0';
+    *(p-1) = '\0';
 
     free(lengths);
     return ret;
