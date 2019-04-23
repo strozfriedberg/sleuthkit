@@ -150,6 +150,8 @@ dnl Check if we should link with libvslvm
 AS_IF([test "x$ax_libbfio" = "xyes"],
       [TSK_OPT_DEP_CHECK([libvslvm], [LVM], [libvslvm], [libvslvm.h], [vslvm], [libvslvm_get_version])],
       [ax_libvslvm=no])
+dnl Check if we should link with libqcow
+TSK_OPT_DEP_CHECK([libqcow], [QCOW], [libqcow], [libqcow.h], [qcow], [libqcow_get_version])
 
 dnl check for cppunit
 AC_ARG_ENABLE([cppunit],
@@ -343,6 +345,7 @@ Building:
    afflib support:                        $ax_afflib
    libbfio support:                       $ax_libbfio
    libewf support:                        $ax_libewf
+   libqcow support:                       $ax_libqcow
    libvhdi support:                       $ax_libvhdi
    libvmdk support:                       $ax_libvmdk
    libvslvm support:                      $ax_libvslvm
