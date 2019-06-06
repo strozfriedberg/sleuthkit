@@ -208,7 +208,9 @@ AC_ARG_ENABLE([offline],
 AM_CONDITIONAL([OFFLINE], [test "x$offline" = xtrue])
 
 dnl check for libtz
-AC_CHECK_HEADERS([date/tz.h], AC_CHECK_LIB([tz], [date::make_zoned])
+AC_LANG_PUSH([C++])
+AC_CHECK_HEADERS([date/tz.h], AC_CHECK_LIB([tz], [main], , AC_MSG_ERROR([missing libtz]))
+AC_LANG_POP([C++])
 
 if test "x$enable_shared" != "xyes"; then
   CXXLD="$CXX -all-static"
