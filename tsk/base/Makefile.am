@@ -1,6 +1,7 @@
 AM_CPPFLAGS = -I../..
 
 noinst_LTLIBRARIES = libtskbase.la
+
 libtskbase_la_SOURCES = \
 	crc.c \
 	crc.h \
@@ -17,6 +18,7 @@ libtskbase_la_SOURCES = \
 	tsk_parse.c \
 	tsk_printf.c \
 	tsk_stack.c \
+	tsk_time.cpp \
 	tsk_unicode.c \
 	tsk_unicode.h \
 	tsk_version.c \
