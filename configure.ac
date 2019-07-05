@@ -24,6 +24,9 @@ AC_PATH_PROG(PERL, perl)
 
 TSK_CHECK_PROG_PKGCONFIG
 
+PACKAGE_LIBS_PRIVATE=
+AC_SUBST([PACKAGE_LIBS_PRIVATE])]
+
 dnl Checks for header files.
 AC_HEADER_STDC
 dnl AC_HEADER_MAJOR
@@ -229,6 +232,7 @@ AC_CHECK_HEADERS([date/tz.h],
       [const auto tz = date::current_zone();]
     )],
     [SAVED_LIBS="$SAVED_LIBS $LIBS"
+     PACKAGE_LIBS_PRIVATE="$PACKAGE_LIBS_PRIVATE $LIBS"
      AC_DEFINE(HAVE_LIBTZ,1,[Define to 1 if you have the `tz' library (-ltz).])
      AC_MSG_RESULT([yes])
     ],
