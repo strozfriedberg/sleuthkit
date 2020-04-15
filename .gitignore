@@ -204,6 +204,5 @@ unit_tests/img/test_img
 
 sleuthkit-*.tar.gz
 
-#Test data folder
-
-tests/data
+# Whitelist test data folder
+!tests/data/*
