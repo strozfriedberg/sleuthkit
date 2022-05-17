@@ -214,7 +214,7 @@ dnl check for libtz
 AC_LANG_PUSH([C++])
 SAVED_LDFLAGS=$LDFLAGS
 SAVED_LIBS=$LIBS
-LIBS=-ltz
+LIBS=-ldate-tz
 
 case "$host" in
 *-*-mingw*)
@@ -225,7 +225,7 @@ case "$host" in
 esac
 
 AC_CHECK_HEADERS([date/tz.h],
-  [AC_MSG_CHECKING([for date::current_zone in -ltz])
+  [AC_MSG_CHECKING([for date::current_zone in -ldate-tz])
    AC_LINK_IFELSE(
     [AC_LANG_PROGRAM(
       [#include <date/tz.h>],
@@ -233,7 +233,7 @@ AC_CHECK_HEADERS([date/tz.h],
     )],
     [SAVED_LIBS="$SAVED_LIBS $LIBS"
      PACKAGE_LIBS_PRIVATE="$PACKAGE_LIBS_PRIVATE $LIBS"
-     AC_DEFINE(HAVE_LIBTZ,1,[Define to 1 if you have the `tz' library (-ltz).])
+     AC_DEFINE(HAVE_LIBDATE_TZ,1,[Define to 1 if you have the `date-tz' library (-ldate-tz).])
      AC_MSG_RESULT([yes])
     ],
     [AC_MSG_RESULT([no])]

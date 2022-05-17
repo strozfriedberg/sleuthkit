@@ -84,8 +84,8 @@
 /* Define to 1 if you have the `stdc++' library (-lstdc++). */
 #undef HAVE_LIBSTDC__
 
-/* Define to 1 if you have the `tz' library (-ltz). */
-#undef HAVE_LIBTZ
+/* Define to 1 if you have the `date-tz' library (-ldate-tz). */
+#undef HAVE_LIBDATE_TZ
 
 /* Define to 1 if you have the `vhdi' library (-lvhdi). */
 #undef HAVE_LIBVHDI
