@@ -15,7 +15,6 @@ fiwalk_SOURCES = fiwalk.cpp  fiwalk_tsk.cpp fiwalk.h \
 	dfxml.cpp dfxml.h \
 	hash_t.h hexbuf.c hexbuf.h \
 	unicode_escape.cpp unicode_escape.h \
-	base64.h base64.cpp \
-	sha2.h sha2.c 
+	base64.h base64.cpp
 
 
