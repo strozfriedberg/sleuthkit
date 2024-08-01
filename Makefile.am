@@ -41,7 +41,7 @@ endif
 if X_JNI
   JAVA_BINDINGS=bindings/java
   JAVA_CASEUCO=case-uco/java
-else   
+else
   JAVA_BINDINGS=
   JAVA_CASEUCO=
 endif
@@ -71,7 +71,7 @@ nobase_include_HEADERS = tsk/libtsk.h tsk/tsk_incs.h \
 
 nobase_dist_data_DATA = tsk/sorter/default.sort tsk/sorter/freebsd.sort \
     tsk/sorter/images.sort tsk/sorter/linux.sort tsk/sorter/openbsd.sort \
-    tsk/sorter/solaris.sort tsk/sorter/windows.sort 
+    tsk/sorter/solaris.sort tsk/sorter/windows.sort
 
 api-docs:
 	doxygen tsk/docs/Doxyfile
