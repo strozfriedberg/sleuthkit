@@ -10,6 +10,8 @@ libtskimg_la_SOURCES = \
 	aff4.h \
 	ewf.cpp \
 	ewf.h \
+	img_cache.cpp \
+	img_cache.h \
 	img_io.c \
 	img_open.cpp \
 	img_types.c \
